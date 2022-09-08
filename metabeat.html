@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta stable </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            position: relative;
+            /* margin-top: 10px; */
+            /* border: 2px solid black; */
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            grid-gap: 10px;
+            align-items: center;
+        }
+
+        #heading {
+            color: white;
+            /* border: 2px solid green; */
+            margin: auto;
+            padding: 10px;
+        }
+
+        .navbar ul {
+            /* border: 2px solid blue; */
+            display: flex;
+            align-items: center;
+            position: absolute;
+            right: 2px;
+
+        }
+
+        .navbar ul li {
+            list-style: none;
+            padding: 5px;
+            margin: 0px 30px;
+            /* text-align: center; */
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            margin: 2px;
+            /* border: 2px solid pink; */
+
+        }
+        .navbar ul li a:hover{
+            color: #FF4255;
+        }
+
+        .navbar::before {
+            background-color: rgb(49, 56, 56);
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            /* opacity: 5.5; */
+
+        }
+
+        #home {
+            display: flex;
+            
+            /* text-align: center; */
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 50px;
+            /* margin-top: 150px; */
+        }
+
+        #home p {
+            font-weight: bold;
+            font-size: 50px;
+            padding: 25px;
+        }
+
+        #home button {
+            padding: 10px;
+            border-radius: 8px;
+            background-color: #FF4255;
+            border: none;
+            font-size: 20px;
+            color: white;
+            transition: all 0.8s ease-in-out;
+            
+        }
+
+        #home button:hover {
+            background-color: white;
+            color: black;
+            cursor: pointer;
+            box-shadow: -3px -3px rgb(101, 97, 97);
+            transform: translate(8px,8px);
+        }
+        #home::before {
+            content: "";
+            background: url('http://surl.li/cyaom') no-repeat center center/cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            z-index: -1;
+            opacity: 0.87;
+        }
+
+        .items {
+            border: 2px solid rgb(239, 233, 233);
+            border-radius: 10px;
+            box-shadow: 5px 5px rgb(173, 170, 170);
+            height: 310px;
+            text-align: center;
+            transition: all 0.45s ease-in-out;
+            /* /transition-property: blue 1s ease ; */
+            /* display: grid; */
+        }
+        .items:hover{
+            cursor: pointer;
+            box-shadow: -3px -3px rgb(101, 97, 97);
+            transform: translate(-8px,-8px);
+            background-color: #FF4255;
+            
+        }
+
+        .items img {
+            padding: 15px;
+            width: 50px;
+            height: 50px;
+        }
+
+        .items h3 {
+            font-size: 20px;
+            padding: 15px;
+        }
+
+        .items p {
+            padding: 10px;
+        }
+
+        .boxes {
+            /* border: 2px solid red; */
+            margin-top: 150px;
+            margin-right: 150px;
+            margin-left: 150px;
+
+
+        }
+
+        .boxes h2 {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .insides {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            grid-gap: 20px;
+
+        }
+        #last{
+            /* border: 2px solid blueviolet; */
+            text-align: center;
+            padding: 45px;
+        }
+        #last button{
+            background-color: #FF4255;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 25px;
+            width: 130px;
+            height: 50px;
+            transition: all 0.5s ease-in-out;
+        }
+        #last button:hover{
+            background-color: white;
+            color: black;
+            box-shadow: -5px -5px;
+            transform: translate(-5px,-5px);
+        }
+
+        /* dropdowm */
+
+
+        /* media query */
+        @media only screen and (max-width: 910px) {
+
+            .navbar ul {
+                display: none;
+            }
+
+            .navbar ul li {
+                list-style: none;
+                padding: 5px;
+                /* margin: 0px 30px; */
+                /* text-align: center; */
+
+            }
+
+        }
+
+        @media only screen and (min-width: 910px) and (max-width: 2000px) {
+            body {
+                /* background-color: rgb(81, 203, 90); */
+            }
+
+            .dropdown {
+                display: none;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <h1 id="heading">METASTABLE</h1>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Contact us</a></li>
+            </ul>
+            <div class="dropdown">
+                <button class="dropbtn">Dropdown</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <hr>
+    <section id="home">
+        <p>We Make Technology Accessible </p>
+        <button>CONTACT US</button>
+    </section>
+
+    <div class="boxes">
+        <h2>OUR SERVICES</h2>
+        <div class="insides">
+            <div class="items"><img src="https://cdn-icons-png.flaticon.com/512/870/870175.png" alt="Services"
+                    id="services">
+                <h3>Architecture Services</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima molestiae magnam culpa vitae. Ipsa
+                    accusamus quas in cupiditate illum ipsam numquam repellendus, ratione aperiam, blanditiis est
+                    aliquam dignissimos rerum quam eaque. Magnam tempora accusamus ratione.</p>
+            </div>
+            <div class="items"> <img src="https://cdn-icons-png.flaticon.com/512/1163/1163412.png" alt="development">
+                <h3>Development</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima molestiae magnam culpa vitae. Ipsa
+                    accusamus quas in cupiditate illum ipsam numquam repellendus, ratione aperiam, blanditiis est
+                    aliquam dignissimos rerum quam eaque. Magnam tempora accusamus ratione.</p>
+            </div>
+            <div class="items"><img src="https://cdn-icons-png.flaticon.com/512/1321/1321740.png"
+                    alt="technical tarining">
+                <h3>Technical Tarining</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima molestiae magnam culpa vitae. Ipsa
+                    accusamus quas in cupiditate illum ipsam numquam repellendus, ratione aperiam, blanditiis est
+                    aliquam
+                    dignissimos rerum quam eaque. Magnam tempora accusamus ratione.</p>
+            </div>
+
+            <div class="items"><img src="https://cdn-icons-png.flaticon.com/512/2980/2980479.png" alt="data migration">
+                <h3>Data Migration</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima molestiae magnam culpa vitae. Ipsa
+                    accusamus quas in cupiditate illum ipsam numquam repellendus, ratione aperiam, blanditiis est
+                    aliquam dignissimos rerum quam eaque. Magnam tempora accusamus ratione.</p>
+            </div>
+            <div class="items"><img src="https://cdn-icons-png.flaticon.com/512/4233/4233428.png" alt="performance">
+                <h3>Performance</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima molestiae magnam culpa vitae. Ipsa
+                    accusamus quas in cupiditate illum ipsam numquam repellendus, ratione aperiam, blanditiis est
+                    aliquam dignissimos rerum quam eaque. Magnam tempora accusamus ratione.</p>
+            </div>
+            <div class="items"><img src="https://cdn-icons-png.flaticon.com/512/4149/4149678.png" alt="process review">
+                <h3>Process Review</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima molestiae magnam culpa vitae. Ipsa
+                    accusamus quas in cupiditate illum ipsam numquam repellendus, ratione aperiam, blanditiis est
+                    aliquam dignissimos rerum quam eaque. Magnam tempora accusamus ratione.</p>
+            </div>
+        </div>
+    </div>
+    <div id="last"><button>Login</button></div>
+
+
+
+</body>
+
+</html>
